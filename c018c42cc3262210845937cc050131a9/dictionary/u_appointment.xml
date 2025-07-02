@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="323d4ce0c3662210845937cc05013113" extends="task" label="Appointment" max_length="40" name="u_appointment" type="collection">
+        <element attributes="encode_utf8=false" dependent="u_patient_id" dependent_on_field="u_patient_id" label="Patient Id" mandatory="true" max_length="32" name="u_patient_id" reference="u_patient" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="4" value="cancelled"/>
+                <element inactive_on_update="false" label="Confirmed" sequence="2" value="confirmed"/>
+                <element inactive_on_update="false" label="Scheduled" sequence="1" value="scheduled"/>
+                <element inactive_on_update="false" label="None" sequence="0" value="none"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Department" mandatory="true" max_length="40" name="u_department" type="string">
+            <choice>
+                <element inactive_on_update="false" label="General Medicine" sequence="1" value="general medicine"/>
+                <element inactive_on_update="false" label="Pediatrics" sequence="3" value="pediatrics"/>
+                <element inactive_on_update="false" label="Cardiology" sequence="2" value="cardiology"/>
+                <element inactive_on_update="false" label="None" sequence="0" value="none"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Appointment Date" mandatory="true" max_length="40" name="u_appointment_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Work Notes" mandatory="true" max_length="4000" name="u_work_notes" type="journal"/>
+        <element attributes="encode_utf8=false" dependent="u_doctor" dependent_on_field="u_doctor" label="Doctor" mandatory="true" max_length="32" name="u_doctor" reference="u_doctor" type="reference" use_dependent_field="true"/>
+    </element>
+</database>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="u_appointment">u_appointment</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>APT</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 17:38:43</sys_created_on>
+        <sys_id>b68cc4a0c3662210845937cc05013123</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>APT</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_number_b68cc4a0c3662210845937cc05013123</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 17:38:43</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</application>
+        <file_path/>
+        <instance_id>ae28286a1b4a86547d9d2f8dee4bcbaf</instance_id>
+        <instance_name>dev267751</instance_name>
+        <name>sys_number_b68cc4a0c3662210845937cc05013123</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="u_appointment">u_appointment</category><maximum_digits>7</maximum_digits><number>1000</number><prefix>APT</prefix><sys_class_name>sys_number</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-01 17:38:43</sys_created_on><sys_id>b68cc4a0c3662210845937cc05013123</sys_id><sys_mod_count>0</sys_mod_count><sys_name>APT</sys_name><sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package><sys_policy/><sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope><sys_update_name>sys_number_b68cc4a0c3662210845937cc05013123</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-01 17:38:43</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>-581601589</payload_hash>
+        <record_name>APT</record_name>
+        <reverted_from/>
+        <source>b0578ce8c3262210845937cc05013123</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 17:38:43</sys_created_on>
+        <sys_id>3e8cc4a0c3662210845937cc05013133</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197c711d25c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 17:38:43</sys_updated_on>
+        <type>Number</type>
+        <update_guid>328cc4a089662210e43ac88809992e33</update_guid>
+        <update_guid_history>328cc4a089662210e43ac88809992e33:-581601589</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-01 17:41:36</sys_created_on>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>d47d27eb4ecf44f0b8fe79a3ca0ec210</sys_id>
+        <sys_metadata>b68cc4a0c3662210845937cc05013123</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>APT</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_parent display_value="">276c04a0c3662210845937cc050131e1</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_scope_delete display_value="">044c04c2413e42d1802f378f46e9aae9</sys_scope_delete>
+        <sys_update_name>sys_number_b68cc4a0c3662210845937cc05013123</sys_update_name>
+        <sys_update_version display_value="sys_number_b68cc4a0c3662210845937cc05013123">3e8cc4a0c3662210845937cc05013133</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-01 17:41:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
