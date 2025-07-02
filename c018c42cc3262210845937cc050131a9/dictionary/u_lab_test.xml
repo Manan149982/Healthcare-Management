@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" db_object_id="25acc8a0c3662210845937cc05013137" max_length="40" name="u_lab_test" type="collection">
+    <element audit="true" db_object_id="25acc8a0c3662210845937cc05013137" extends="task" label="Lab Test" max_length="40" name="u_lab_test" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Results" mandatory="true" max_length="40" name="u_results" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
             <choice>

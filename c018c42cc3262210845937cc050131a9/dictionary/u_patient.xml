@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" db_object_id="713ccc60c3662210845937cc05013184" max_length="40" name="u_patient" type="collection">
+    <element audit="true" db_object_id="713ccc60c3662210845937cc05013184" label="Patient" max_length="40" name="u_patient" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Contact Number" mandatory="true" max_length="40" name="u_contact_number" type="phone_number_e164"/>
         <element attributes="edge_encryption_enabled=true" label="Address" mandatory="true" max_length="40" name="u_address" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Email" mandatory="true" max_length="40" name="u_email" type="string"/>
