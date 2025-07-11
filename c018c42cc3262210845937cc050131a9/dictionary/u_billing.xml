@@ -7,9 +7,9 @@
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
             <choice>
                 <element inactive_on_update="false" label="Paid" sequence="2" value="paid"/>
-                <element inactive_on_update="false" label="None" sequence="0" value="none"/>
-                <element inactive_on_update="false" label="Pending" sequence="1" value="pending"/>
-                <element inactive_on_update="false" label="Overdue" sequence="3" value="overdue"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="none"/>
+                <element inactive_on_update="false" label="Pending" sequence="3" value="pending"/>
+                <element inactive_on_update="false" label="Overdue" sequence="1" value="overdue"/>
             </choice>
         </element>
     </element>

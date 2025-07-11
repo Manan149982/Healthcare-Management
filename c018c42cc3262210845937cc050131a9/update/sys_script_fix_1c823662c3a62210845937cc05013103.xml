@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>Q2</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var CurrentDateTime = new GlideDateTime();
+var grAppointment = new GlideRecord('u_appointment')
+grAppointment.addQuery('u_status', '!=', 'Camcelled');
+grAppointment.addQuery('u_appointment_date', '<', CurrentDateTime);
+grAppointment.query();
+while (grAppointment.next())
+{
+	grAppointment.u_status = 'Camcelled';
+	gs.print('Appointment' +grAppointment.number.getDisplayValue() +"has been marked as cancelled");
+
+}
+
+
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 11:09:01</sys_created_on>
+        <sys_id>1c823662c3a62210845937cc05013103</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Q2</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_fix_1c823662c3a62210845937cc05013103</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 11:21:56</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>1c823662c3a62210845937cc05013103</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 11:09:01</sys_created_on>
+        <sys_id>da763662c3a62210845937cc050131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 11:09:01</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -4,13 +4,13 @@
             <element>u_number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:14:28</sys_created_on>
-            <sys_id>2ecb6ae8c3226210845937cc0501314b</sys_id>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>89040474c3e66210845937cc050131f6</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:14:28</sys_updated_on>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>u_ward_name</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:14:28</sys_created_on>
-            <sys_id>a2cb6ae8c3226210845937cc0501314c</sys_id>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>01040474c3e66210845937cc050131f7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:14:28</sys_updated_on>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>u_location</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:14:28</sys_created_on>
-            <sys_id>2acb6ae8c3226210845937cc0501314c</sys_id>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>85040474c3e66210845937cc050131f7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:14:28</sys_updated_on>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>u_capacity</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:14:28</sys_created_on>
-            <sys_id>aecb6ae8c3226210845937cc0501314c</sys_id>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>0d040474c3e66210845937cc050131f7</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:14:28</sys_updated_on>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,27 @@
             <element>u_occupancy</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:14:28</sys_created_on>
-            <sys_id>26cb6ae8c3226210845937cc0501314d</sys_id>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>81040474c3e66210845937cc050131f8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:14:28</sys_updated_on>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_status</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 11:39:57</sys_created_on>
+            <sys_id>09040474c3e66210845937cc050131f8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Ward Details" display_value="Ward Details" name="u_ward" sys_domain="global" view="Default view">fdeaee68c3226210845937cc05013101</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 11:39:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

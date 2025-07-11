@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:27:51</sys_created_on>
-            <sys_id>52dee6ecc3226210845937cc050131a4</sys_id>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>da4a0b6ec3e62210845937cc05013166</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:27:51</sys_updated_on>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>u_patient_id</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:27:51</sys_created_on>
-            <sys_id>d6dee6ecc3226210845937cc050131a4</sys_id>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>d64a0b6ec3e62210845937cc05013167</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:27:51</sys_updated_on>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>u_provider</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:27:51</sys_created_on>
-            <sys_id>5edee6ecc3226210845937cc050131a4</sys_id>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>5e4a0b6ec3e62210845937cc05013167</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:27:51</sys_updated_on>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>u_policy_number</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:27:51</sys_created_on>
-            <sys_id>d2dee6ecc3226210845937cc050131a5</sys_id>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>d24a0b6ec3e62210845937cc05013168</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:27:51</sys_updated_on>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,41 @@
             <element>u_coverage_details</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-02 05:27:51</sys_created_on>
-            <sys_id>5adee6ecc3226210845937cc050131a5</sys_id>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>5a4a0b6ec3e62210845937cc05013168</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-02 05:27:51</sys_updated_on>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_status</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>de4a0b6ec3e62210845937cc05013168</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_policy_number</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-08 12:35:34</sys_created_on>
+            <sys_id>564a0b6ec3e62210845937cc05013169</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Insurance Details" display_value="Insurance Details" name="u_insurance" sys_domain="global" view="Default view">a93e6e2cc3226210845937cc05013154</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-08 12:35:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

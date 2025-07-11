@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="70a1dc28c3662210845937cc05013149" sys_domain="global" table="u_doctor" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_number</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+            <sys_id>c92b44bcc3e66210845937cc0501317a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_first_name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+            <sys_id>412b44bcc3e66210845937cc0501317b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_last_name</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+            <sys_id>c52b44bcc3e66210845937cc0501317b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_specialization</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+            <sys_id>4d2b44bcc3e66210845937cc0501317b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_status</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+            <sys_id>c12b44bcc3e66210845937cc0501317c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>u_doctor</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-01 18:00:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>70a1dc28c3662210845937cc05013149</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_doctor</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+            <sys_update_name>sys_ui_section_70a1dc28c3662210845937cc05013149</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-01 18:00:58</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</application>
+        <file_path/>
+        <instance_id>ae28286a1b4a86547d9d2f8dee4bcbaf</instance_id>
+        <instance_name>dev267751</instance_name>
+        <name>sys_ui_section_70a1dc28c3662210845937cc05013149</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="70a1dc28c3662210845937cc05013149" sys_domain="global" table="u_doctor" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>u_number</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 12:11:04</sys_created_on><sys_id>c92b44bcc3e66210845937cc0501317a</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 12:11:04</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_first_name</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 12:11:04</sys_created_on><sys_id>412b44bcc3e66210845937cc0501317b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 12:11:04</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_last_name</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 12:11:04</sys_created_on><sys_id>c52b44bcc3e66210845937cc0501317b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 12:11:04</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_specialization</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 12:11:04</sys_created_on><sys_id>4d2b44bcc3e66210845937cc0501317b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 12:11:04</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_status</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-02 12:11:04</sys_created_on><sys_id>c12b44bcc3e66210845937cc0501317c</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="u_doctor" sys_domain="global" view="Default view">70a1dc28c3662210845937cc05013149</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-02 12:11:04</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>u_doctor</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-07-01 18:00:58</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>70a1dc28c3662210845937cc05013149</sys_id><sys_mod_count>0</sys_mod_count><sys_name>u_doctor</sys_name><sys_overrides/><sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package><sys_policy/><sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope><sys_update_name>sys_ui_section_70a1dc28c3662210845937cc05013149</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-07-01 18:00:58</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>1313821242</payload_hash>
+        <record_name>Doctor</record_name>
+        <reverted_from/>
+        <source>e83d88e0c3662210845937cc050131fd</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 12:11:04</sys_created_on>
+        <sys_id>452b44bcc3e66210845937cc0501317e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197cb0c35fa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 12:11:04</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>0d2b44bce2e662105d9f3c313952647d</update_guid>
+        <update_guid_history>0d2b44bce2e662105d9f3c313952647d:1313821242,088866e4c02262103dbe8df82dff84e0:-899083255,38a110a8086622100fc106457f0b436c:1000400093,3ca1dc28fd662210fed9f56913f3584b:639242257</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-02 12:14:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>32a656a609784be294edbc8a736c1429</sys_id>
+        <sys_metadata>70a1dc28c3662210845937cc05013149</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_doctor</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_parent display_value="Doctor">125d0024c3662210845937cc05013170</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_scope_delete display_value="">044c04c2413e42d1802f378f46e9aae9</sys_scope_delete>
+        <sys_update_name>sys_ui_section_70a1dc28c3662210845937cc05013149</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_70a1dc28c3662210845937cc05013149">452b44bcc3e66210845937cc0501317e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-02 12:14:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="713ccc60c3662210845937cc05013184" label="Patient" max_length="40" name="u_patient" type="collection">
+        <element default="true" label="VIP" max_length="40" name="u_vip" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" label="Contact Number" mandatory="true" max_length="40" name="u_contact_number" type="phone_number_e164"/>
         <element attributes="edge_encryption_enabled=true" label="Address" mandatory="true" max_length="40" name="u_address" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="Email" mandatory="true" max_length="40" name="u_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Under Treatment" sequence="2" value="under treatment"/>
+                <element inactive_on_update="false" label="Discharged" sequence="3" value="discharged"/>
+                <element inactive_on_update="false" label="In Progress" sequence="1" value="in progress"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true, email_client=true" label="Email" mandatory="true" max_length="40" name="u_email" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Date of Birth" mandatory="true" max_length="40" name="u_date_of_birth" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" label="Emergency Contact" mandatory="true" max_length="40" name="u_emergency_contact" type="phone_number_e164"/>
         <element attributes="edge_encryption_enabled=true" label="Last Name" mandatory="true" max_length="40" name="u_last_name" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="First Name" mandatory="true" max_length="40" name="u_first_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Priority" max_length="40" name="u_priority" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Low" sequence="0" value="low"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="high"/>
+            </choice>
+        </element>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Patient Id" max_length="40" name="u_number" read_only="true" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Gender" mandatory="true" max_length="40" name="u_gender" type="string">
             <choice>

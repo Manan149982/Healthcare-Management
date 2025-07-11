@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <derived_priority>100</derived_priority>
+        <description>abcdefgh</description>
+        <event_name>appointment_is_confirmed</event_name>
+        <fired_by/>
+        <priority>100</priority>
+        <queue/>
+        <suffix/>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-09 12:30:57</sys_created_on>
+        <sys_id>b2b2180fc3ee6210845937cc0501316b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>appointment_is_confirmed</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sysevent_register_b2b2180fc3ee6210845937cc0501316b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-09 16:51:50</sys_updated_on>
+        <table>u_appointment</table>
+    </sysevent_register>
+</record_update>

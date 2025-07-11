@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="125d0024c3662210845937cc05013170" label="Doctor" max_length="40" name="u_doctor" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Doctor Id" max_length="40" name="u_number" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Retired" sequence="2" value="retired"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Active" sequence="1" value="active"/>
+            </choice>
+        </element>
         <element attributes="edge_encryption_enabled=true" label="Contact Number" mandatory="true" max_length="40" name="u_contact_number" type="phone_number_e164"/>
         <element attributes="edge_encryption_enabled=true" label="Office Location" mandatory="true" max_length="40" name="u_office_location" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Specialization" mandatory="true" max_length="40" name="u_specialization" type="string">

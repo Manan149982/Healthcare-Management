@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="979d4824c3662210845937cc0501313e" label="Room" max_length="40" name="u_room" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Room Number" mandatory="true" max_length="40" name="u_room_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Under Maintenance" sequence="3" value="under maintenance"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Available" sequence="1" value="available"/>
+                <element inactive_on_update="false" label="Occupied" sequence="2" value="occupied"/>
+            </choice>
+        </element>
         <element attributes="edge_encryption_enabled=true" label="Work Notes" mandatory="true" max_length="4000" name="u_work_notes" type="journal"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Room Id" max_length="40" name="u_number" read_only="true" type="string"/>
         <element attributes="encode_utf8=false" dependent="u_reference_1" dependent_on_field="u_reference_1" label="Ward Id" mandatory="true" max_length="32" name="u_ward_id" reference="u_ward" type="reference" use_dependent_field="true"/>
