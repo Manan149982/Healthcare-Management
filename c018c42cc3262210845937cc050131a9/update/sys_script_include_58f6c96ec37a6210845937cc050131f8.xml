@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.MedicationUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>MedicationUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var MedicationUtils = Class.create();
+MedicationUtils.prototype = {
+    initialize: function() {},
+
+    calculateTotalDosage: function(medSysId) {
+        var gr = new GlideRecord('u_medication');
+        if (gr.get(medSysId)) {
+            var dosage = parseFloat(gr.u_dosage);
+            var frequency = parseFloat(gr.u_frequency);
+            return isNaN(dosage) || isNaN(frequency) ? 0 : dosage * frequency;
+        }
+        return 0;
+    },
+
+    isAvailable: function(medSysId) {
+        var gr = new GlideRecord('u_medication');
+        if (gr.get(medSysId)) {
+            return gr.u_available == true;
+        }
+        return false;
+    },
+
+    fetchById: function(medSysId) {
+        var gr = new GlideRecord('u_medication');
+        if (gr.get(medSysId)) {
+            return {
+                name: gr.u_medication_name + '',
+                dosage: gr.u_dosage + '',
+                frequency: gr.u_frequency + '',
+                start: gr.u_start_date ? gr.u_start_date.getDisplayValue() : '',
+                end: gr.u_end_date ? gr.u_end_date.getDisplayValue() : '',
+                available: gr.u_available == true
+            };
+        }
+        return null;
+    },
+
+    fetchByPatient: function(patientSysId) {
+        var result = [];
+        var gr = new GlideRecord('u_medication');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+        while (gr.next()) {
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                name: gr.u_medication_name + '',
+                dosage: gr.u_dosage + '',
+                frequency: gr.u_frequency + '',
+                available: gr.u_available == true
+            });
+        }
+        return result;
+    },
+
+    type: 'MedicationUtils'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 13:17:59</sys_created_on>
+        <sys_id>58f6c96ec37a6210845937cc050131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MedicationUtils</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_58f6c96ec37a6210845937cc050131f8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 13:17:59</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>58f6c96ec37a6210845937cc050131f8</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 13:17:59</sys_created_on>
+        <sys_id>64174deac37a6210845937cc0501312a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 13:17:59</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

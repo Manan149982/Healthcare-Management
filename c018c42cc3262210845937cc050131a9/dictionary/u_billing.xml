@@ -4,6 +4,7 @@
         <element attributes="omit_sys_original=true" label="Total Amount" mandatory="true" max_length="20" name="u_total_amount" type="currency"/>
         <element attributes="edge_encryption_enabled=true" label="Work Notes" mandatory="true" max_length="4000" name="u_work_notes" type="journal"/>
         <element attributes="encode_utf8=false" dependent="u_appointment_id" dependent_on_field="u_appointment_id" label="Appointment Id" mandatory="true" max_length="32" name="u_appointment_id" reference="u_appointment" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Due Date" max_length="40" name="u_due_date" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="u_status" type="string">
             <choice>
                 <element inactive_on_update="false" label="Paid" sequence="2" value="paid"/>

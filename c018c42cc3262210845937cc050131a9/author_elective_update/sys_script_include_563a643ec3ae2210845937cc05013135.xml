@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global. MedicationUtils </api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name> MedicationUtils </name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var MedicationUtils = Class.create();
+MedicationUtils.prototype = {
+    initialize: function() {},
+
+    // a. Calculate the total dosage for a medication
+    TotalDosage: function(medicationName) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_medication_name', medicationName);
+        med.query();
+        if (med.next()) {
+            var dosage = parseFloat(med.getValue('u_dosage') || 0);
+            var freq = parseInt(med.getValue('u_frequency') || 0, 10);
+            return dosage * freq;
+        }
+        return null;
+    },
+
+    // b. Check if medication is available (active)
+    IsMedicationAvailable: function(medicationName) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_medication_name', medicationName);
+        med.query();
+        return med.next() ? med.active == true : false;
+    },
+// c. Get medication details by number
+    MedDetails: function(medicationNumber) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('number', medicationNumber);
+        med.query();
+        if (med.next()) {
+            return {
+                sys_id: med.getUniqueValue(),
+                name: med.getDisplayValue('u_medication_name'),
+                dosage: med.getValue('u_dosage'),
+                frequency: med.getValue('u_frequency'),
+                isAvailable: med.active
+            };
+        }
+        return null;
+    },
+
+    // d. Get medications by patient sys_id
+    MedDetailsByPatientId: function(patientId) {
+        var results = [];
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_patient_id', patientId); 
+        med.query();
+        while (med.next()) {
+ results.push({
+                sys_id: med.getUniqueValue(),
+                name: med.getDisplayValue('u_medication_name'),
+                dosage: med.getValue('u_dosage'),
+                frequency: med.getValue('u_frequency'),
+                isAvailable: med.active
+            });
+        }
+        return results;
+    },
+
+    type: 'MedicationUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 19:35:44</sys_created_on>
+        <sys_id>563a643ec3ae2210845937cc05013135</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name> MedicationUtils </sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_563a643ec3ae2210845937cc05013135</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 19:38:33</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>563a643ec3ae2210845937cc05013135</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 19:35:44</sys_created_on>
+        <sys_id>c57ae07ec3ae2210845937cc05013125</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 19:35:44</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</application>
+        <file_path/>
+        <instance_id>ae28286a1b4a86547d9d2f8dee4bcbaf</instance_id>
+        <instance_name>dev267751</instance_name>
+        <name>sys_script_include_563a643ec3ae2210845937cc05013135</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global. MedicationUtils &lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt; MedicationUtils &lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var MedicationUtils = Class.create();
+MedicationUtils.prototype = {
+    initialize: function() {},
+
+    // a. Calculate the total dosage for a medication
+    TotalDosage: function(medicationName) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_medication_name', medicationName);
+        med.query();
+        if (med.next()) {
+            var dosage = parseFloat(med.getValue('u_dosage') || 0);
+            var freq = parseInt(med.getValue('u_frequency') || 0, 10);
+            return dosage * freq;
+        }
+        return null;
+    },
+
+    // b. Check if medication is available (active)
+    IsMedicationAvailable: function(medicationName) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_medication_name', medicationName);
+        med.query();
+        return med.next() ? med.active == true : false;
+    },
+// c. Get medication details by number
+    MedDetails: function(medicationNumber) {
+        var med = new GlideRecord('u_medication');
+        med.addQuery('number', medicationNumber);
+        med.query();
+        if (med.next()) {
+            return {
+                sys_id: med.getUniqueValue(),
+                name: med.getDisplayValue('u_medication_name'),
+                dosage: med.getValue('u_dosage'),
+                frequency: med.getValue('u_frequency'),
+                isAvailable: med.active
+            };
+        }
+        return null;
+    },
+
+    // d. Get medications by patient sys_id
+    MedDetailsByPatientId: function(patientId) {
+        var results = [];
+        var med = new GlideRecord('u_medication');
+        med.addQuery('u_patient_id', patientId); 
+        med.query();
+        while (med.next()) {
+ results.push({
+                sys_id: med.getUniqueValue(),
+                name: med.getDisplayValue('u_medication_name'),
+                dosage: med.getValue('u_dosage'),
+                frequency: med.getValue('u_frequency'),
+                isAvailable: med.active
+            });
+        }
+        return results;
+    },
+
+    type: 'MedicationUtils'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-08 19:35:44&lt;/sys_created_on&gt;&lt;sys_id&gt;563a643ec3ae2210845937cc05013135&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt; MedicationUtils &lt;/sys_name&gt;&lt;sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9"&gt;c018c42cc3262210845937cc050131a9&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Healthcare Management "&gt;c018c42cc3262210845937cc050131a9&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_563a643ec3ae2210845937cc05013135&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-08 19:38:33&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;563a643ec3ae2210845937cc05013135&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-08 19:35:44&lt;/sys_created_on&gt;&lt;sys_id&gt;c57ae07ec3ae2210845937cc05013125&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-08 19:35:44&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1614423382</payload_hash>
+        <record_name> MedicationUtils </record_name>
+        <reverted_from/>
+        <source>e83d88e0c3662210845937cc050131fd</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 19:38:33</sys_created_on>
+        <sys_id>421bec7ec3ae2210845937cc050131f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197eb8c0b2f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 19:38:33</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>c61bec7eaaae22106b648ad7d09d06f5</update_guid>
+        <update_guid_history>c61bec7eaaae22106b648ad7d09d06f5:-1614423382,417a243e1aae22104c77434357d9947f:1304385210</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-19 19:27:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>002422297d9a4ddc9032a54234634a64</sys_id>
+        <sys_metadata>563a643ec3ae2210845937cc05013135</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name> MedicationUtils </sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_scope_delete display_value="">044c04c2413e42d1802f378f46e9aae9</sys_scope_delete>
+        <sys_update_name>sys_script_include_563a643ec3ae2210845937cc05013135</sys_update_name>
+        <sys_update_version display_value="sys_script_include_563a643ec3ae2210845937cc05013135">421bec7ec3ae2210845937cc050131f6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-19 19:27:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

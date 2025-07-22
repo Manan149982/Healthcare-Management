@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.PatientUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PatientUtil</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PatientUtil = Class.create();
+PatientUtil.prototype = {
+	initialize: function () {
+	},
+	getPatientDetailsById: function (patientId) {
+		var gr = new GlideRecord('u_patient');
+		gr.addQuery('u_number', patientId);
+		gr.query();
+		if (gr.next()) {
+			return gr.getValue('sys_id') + ';' + gr.getValue('u_first_name');
+		}
+		else {
+	    return gs.print("Patient Id not exist");
+		}
+		
+	},
+	isVIP: function (patientId) {
+		var gr = new GlideRecord('u_patient');
+		gr.addQuery('u_number', patientId);
+		gr.query();
+		if (gr.next()) {
+			return gr.getValue('u_vip') == 'true';  
+		} else {
+			return false;
+		}
+	},
+	calculateAge: function(patientId) {
+    var gr = new GlideRecord('u_patient');
+    gr.addQuery('u_number', patientId);
+    gr.query();
+    if (gr.next()) {
+        var dob = gr.getValue('u_date_of_birth'); // Make sure this is the correct field name
+        if (dob) {
+            gs.info("DOB from record: " + dob); // Debug line
+            var dobDate = new GlideDateTime(dob);
+            var now = new GlideDateTime();
+            var secondsDiff = gs.dateDiff(dobDate, now, true); // Returns seconds
+            var age = Math.floor(secondsDiff / (365.25 * 24 * 60 * 60));
+            return age;
+        } else {
+            gs.info("DOB is null for patient ID: " + patientId);
+        }
+    } else {
+        gs.info("Patient not found with ID: " + patientId);
+    }
+
+    return null;
+},
+getAppointments: function(patientId) {
+    var result = [];
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query appointments
+        var grApp = new GlideRecord('u_appointment');
+        grApp.addQuery('u_patient_id', patientSysId); // Assuming u_patient_id is the reference field
+        grApp.query();
+
+        while (grApp.next()) {
+            result.push({
+                number: grApp.getValue('number'),
+                date: grApp.getDisplayValue('u_appointment_date'), // replace with actual date field
+                doctor: grApp.getDisplayValue('u_doctor') // assuming u_doctor is a reference field
+            });
+        }
+    }
+
+    return result;
+},
+getMedications: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query medications table
+        var grMed = new GlideRecord('u_medication'); // Replace with actual table name if different
+        grMed.addQuery('u_patient_id', patientSysId); // Make sure this is the correct reference field
+        grMed.query();
+
+        while (grMed.next()) {
+            result.push({
+                name: grMed.getValue('u_medication_name'),    // Change field name if needed
+                dosage: grMed.getValue('u_dosage'),           // Optional
+                date: grMed.getDisplayValue('u_prescribed_on') // Optional
+            });
+        }
+    }
+
+    return result;
+},
+getLabTests: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query lab tests table
+        var grTest = new GlideRecord('u_lab_test'); // Replace with actual table name if different
+        grTest.addQuery('u_patient_id', patientSysId); // Reference to patient
+        grTest.query();
+
+        while (grTest.next()) {
+            result.push({
+                test_name: grTest.getValue('u_test_type'), // Replace with actual field
+                date: grTest.getDisplayValue('u_scheduled_date'),
+                result: grTest.getValue('u_results') 
+            });
+        }
+    }
+
+    return result;
+},
+getBillingRecords: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query billing records table
+        var grBill = new GlideRecord('u_billing'); // Replace with actual table name if different
+        grBill.addQuery('u_patient_id', patientSysId); // Reference to patient
+        grBill.query();
+
+        while (grBill.next()) {
+            result.push({
+                bill_number: grBill.getValue('number'),       // Replace with actual field name
+                amount: grBill.getValue('u_total_amount'),                 // Optional
+            
+                status: grBill.getValue('u_status')                  // Optional
+            });
+        }
+    }
+
+    return result;
+},
+getInsurancePolicies: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query insurance policies
+        var grPolicy = new GlideRecord('u_insurance'); // Adjust table name if needed
+        grPolicy.addQuery('u_patient_id', patientSysId);
+        grPolicy.query();
+
+        while (grPolicy.next()) {
+            result.push({
+                policy_number: grPolicy.getValue('number'),         // Replace with actual field name
+                provider: grPolicy.getValue('u_provider'),         // Optional
+                coverage: grPolicy.getValue('u_coverage_details'),            // Optional
+                status: grPolicy.getValue('u_status')                        // Optional
+            });
+        }
+    }
+
+    return result;
+},
+
+
+	type: 'PatientUtil'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 16:19:21</sys_created_on>
+        <sys_id>af3637aec3aa2210845937cc05013159</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>PatientUtil</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_af3637aec3aa2210845937cc05013159</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-15 16:17:51</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>af3637aec3aa2210845937cc05013159</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-08 16:19:20</sys_created_on>
+        <sys_id>4c8db722c3ea2210845937cc05013158</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-08 16:19:20</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</application>
+        <file_path/>
+        <instance_id>ae28286a1b4a86547d9d2f8dee4bcbaf</instance_id>
+        <instance_name>dev267751</instance_name>
+        <name>sys_script_include_af3637aec3aa2210845937cc05013159</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.PatientUtil&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;PatientUtil&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var PatientUtil = Class.create();
+PatientUtil.prototype = {
+	initialize: function () {
+	},
+	getPatientDetailsById: function (patientId) {
+		var gr = new GlideRecord('u_patient');
+		gr.addQuery('u_number', patientId);
+		gr.query();
+		if (gr.next()) {
+			return gr.getValue('sys_id') + ';' + gr.getValue('u_first_name');
+		}
+		else {
+	    return gs.print("Patient Id not exist");
+		}
+		
+	},
+	isVIP: function (patientId) {
+		var gr = new GlideRecord('u_patient');
+		gr.addQuery('u_number', patientId);
+		gr.query();
+		if (gr.next()) {
+			return gr.getValue('u_vip') == 'true';  
+		} else {
+			return false;
+		}
+	},
+	calculateAge: function(patientId) {
+    var gr = new GlideRecord('u_patient');
+    gr.addQuery('u_number', patientId);
+    gr.query();
+    if (gr.next()) {
+        var dob = gr.getValue('u_date_of_birth'); // Make sure this is the correct field name
+        if (dob) {
+            gs.info("DOB from record: " + dob); // Debug line
+            var dobDate = new GlideDateTime(dob);
+            var now = new GlideDateTime();
+            var secondsDiff = gs.dateDiff(dobDate, now, true); // Returns seconds
+            var age = Math.floor(secondsDiff / (365.25 * 24 * 60 * 60));
+            return age;
+        } else {
+            gs.info("DOB is null for patient ID: " + patientId);
+        }
+    } else {
+        gs.info("Patient not found with ID: " + patientId);
+    }
+
+    return null;
+},
+getAppointments: function(patientId) {
+    var result = [];
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query appointments
+        var grApp = new GlideRecord('u_appointment');
+        grApp.addQuery('u_patient_id', patientSysId); // Assuming u_patient_id is the reference field
+        grApp.query();
+
+        while (grApp.next()) {
+            result.push({
+                number: grApp.getValue('number'),
+                date: grApp.getDisplayValue('u_appointment_date'), // replace with actual date field
+                doctor: grApp.getDisplayValue('u_doctor') // assuming u_doctor is a reference field
+            });
+        }
+    }
+
+    return result;
+},
+getMedications: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query medications table
+        var grMed = new GlideRecord('u_medication'); // Replace with actual table name if different
+        grMed.addQuery('u_patient_id', patientSysId); // Make sure this is the correct reference field
+        grMed.query();
+
+        while (grMed.next()) {
+            result.push({
+                name: grMed.getValue('u_medication_name'),    // Change field name if needed
+                dosage: grMed.getValue('u_dosage'),           // Optional
+                date: grMed.getDisplayValue('u_prescribed_on') // Optional
+            });
+        }
+    }
+
+    return result;
+},
+getLabTests: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query lab tests table
+        var grTest = new GlideRecord('u_lab_test'); // Replace with actual table name if different
+        grTest.addQuery('u_patient_id', patientSysId); // Reference to patient
+        grTest.query();
+
+        while (grTest.next()) {
+            result.push({
+                test_name: grTest.getValue('u_test_type'), // Replace with actual field
+                date: grTest.getDisplayValue('u_scheduled_date'),
+                result: grTest.getValue('u_results') 
+            });
+        }
+    }
+
+    return result;
+},
+getBillingRecords: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query billing records table
+        var grBill = new GlideRecord('u_billing'); // Replace with actual table name if different
+        grBill.addQuery('u_patient_id', patientSysId); // Reference to patient
+        grBill.query();
+
+        while (grBill.next()) {
+            result.push({
+                bill_number: grBill.getValue('number'),       // Replace with actual field name
+                amount: grBill.getValue('u_total_amount'),                 // Optional
+            
+                status: grBill.getValue('u_status')                  // Optional
+            });
+        }
+    }
+
+    return result;
+},
+getInsurancePolicies: function(patientId) {
+    var result = [];
+
+    // Step 1: Get patient sys_id
+    var grPatient = new GlideRecord('u_patient');
+    grPatient.addQuery('u_number', patientId);
+    grPatient.query();
+
+    if (grPatient.next()) {
+        var patientSysId = grPatient.getValue('sys_id');
+
+        // Step 2: Query insurance policies
+        var grPolicy = new GlideRecord('u_insurance'); // Adjust table name if needed
+        grPolicy.addQuery('u_patient_id', patientSysId);
+        grPolicy.query();
+
+        while (grPolicy.next()) {
+            result.push({
+                policy_number: grPolicy.getValue('number'),         // Replace with actual field name
+                provider: grPolicy.getValue('u_provider'),         // Optional
+                coverage: grPolicy.getValue('u_coverage_details'),            // Optional
+                status: grPolicy.getValue('u_status')                        // Optional
+            });
+        }
+    }
+
+    return result;
+},
+
+
+	type: 'PatientUtil'
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-08 16:19:21&lt;/sys_created_on&gt;&lt;sys_id&gt;af3637aec3aa2210845937cc05013159&lt;/sys_id&gt;&lt;sys_mod_count&gt;19&lt;/sys_mod_count&gt;&lt;sys_name&gt;PatientUtil&lt;/sys_name&gt;&lt;sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9"&gt;c018c42cc3262210845937cc050131a9&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Healthcare Management "&gt;c018c42cc3262210845937cc050131a9&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_af3637aec3aa2210845937cc05013159&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-15 16:17:51&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;af3637aec3aa2210845937cc05013159&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-08 16:19:20&lt;/sys_created_on&gt;&lt;sys_id&gt;4c8db722c3ea2210845937cc05013158&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-08 16:19:20&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>715817961</payload_hash>
+        <record_name>PatientUtil</record_name>
+        <reverted_from/>
+        <source>580ad0a0c3322210845937cc050131de</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-15 16:17:51</sys_created_on>
+        <sys_id>62400485c37a2210845937cc05013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1980ee0d1ae0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-15 16:17:51</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>e64004859e7a22101135d3109119e683</update_guid>
+        <update_guid_history>e64004859e7a22101135d3109119e683:715817961,c2204809bb7a22105d98eb0ed8582782:-1986070488,56cfbbf4527a221072eb37173326e9e5:1976246771,ef82a8326cae2210d1b93f72419a62b6:-1950192028,f712a4b23eae2210e3eda6253f8f3a6a:191794365,b441a4b212ae2210f25eb4c4f7c17cf8:432716961,ddc0ec723cae2210d87aaaf3d5431232:-1166073678,cb80a472e5ae2210d9fc12314324cd12:721921900,20cf9832d1ae22100a30241d9b41e0d2:-314865449,268f94fe706e2210b64a758b3fde7f6b:-1333017681,be2f54fe206e221056880e6c8eb96322:-1972117743,48ce183a6e6e22104ef7470220ddbb37:2007285080,937e94fe2d6e22104f4de6b291043148:-1286793921,e6599876676e2210c170a2955497e251:447259459,2eb81c76586e2210d1bcfe2a4b228c01:-1240596148,0ff55836d96e2210b35d9247b2c8cc73:-1204965506,9d7540b20a2e2210e92bb1de5f9d9f7e:-1016143248,f56480fa6aea22105c7839635b224108:-782192762,048fff6a6fea22106b27e04b07e3c8cb:1093215034,d08d3f2af0ea22108fcc134a54c35b66:-2090712807</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-19 19:27:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>601175e0b82747e091b92ca751b7b840</sys_id>
+        <sys_metadata>af3637aec3aa2210845937cc05013159</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PatientUtil</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_scope_delete display_value="">044c04c2413e42d1802f378f46e9aae9</sys_scope_delete>
+        <sys_update_name>sys_script_include_af3637aec3aa2210845937cc05013159</sys_update_name>
+        <sys_update_version display_value="sys_script_include_af3637aec3aa2210845937cc05013159">62400485c37a2210845937cc05013184</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-19 19:27:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

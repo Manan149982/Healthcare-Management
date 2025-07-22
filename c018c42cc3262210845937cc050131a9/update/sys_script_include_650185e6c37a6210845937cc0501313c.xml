@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.PatientUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PatientUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PatientUtils = Class.create();
+PatientUtils.prototype = {
+    initialize: function() {},
+
+    fetchDetails: function(id) {
+        var gr = new GlideRecord('u_patient');
+        if (gr.get(id)) {
+            return gr;
+        }
+        return null;
+
+    },
+
+    isVIP: function(sysId) {
+        var gr = new GlideRecord('u_patient');
+        if (gr.get(sysId)) {
+            return gr.u_vip == true || gr.u_vip == 'true';
+        }
+        return false;
+    },
+
+    calculateAge: function(id){
+        var gr = new GlideRecord("u_patient");
+        gr.get(id);
+        var dob = new GlideDateTime(gr.u_date_of_birth);
+        var today = new GlideDateTime();
+ 
+        var diffMillis = today.getNumericValue() - dob.getNumericValue();
+        var millisInYear = 1000 * 60 * 60 * 24 * 365.25;
+ 
+        return Math.floor(diffMillis / millisInYear);
+    },
+
+    fetchAppointments: function(patientSysId) {
+        var result = [];
+        var gr = new GlideRecord('u_appointment');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+        while (gr.next()) {
+            // you can push sys_id or any display field
+            result.push({
+                sys_id: gr.getUniqueValue(),
+                date: gr.u_appointment_date + '',
+                status: gr.u_status + ''
+            });
+        }
+        return result;
+    },
+
+    /**
+     * Fetch all medications for a given patient.
+     * Returns an array of objects: { sys_id, name, dosage, frequency, start_date, end_date }
+     */
+    fetchMedications: function(patientSysId) {
+        var meds = [];
+        var gr = new GlideRecord('u_medication');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+        while (gr.next()) {
+            meds.push({
+                sys_id: gr.getUniqueValue(),
+                name: gr.u_medication_name + '',
+                dosage: gr.u_dosage + '',
+                frequency: gr.u_frequency + '',
+                start_date: gr.u_start_date ? gr.u_start_date.getDisplayValue() : '',
+                end_date: gr.u_end_date ? gr.u_end_date.getDisplayValue() : ''
+            });
+        }
+        return meds;
+    },
+
+    
+    fetchLabTests: function(patientSysId) {
+        var tests = [];
+        var gr = new GlideRecord('u_lab_test');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+        while (gr.next()) {
+            tests.push({
+                sys_id: gr.getUniqueValue(),
+                test_type: gr.u_test_type + '',
+                scheduled_date: gr.u_scheduled_date ? gr.u_scheduled_date.getDisplayValue() : '',
+                status: gr.u_status + '',
+                results: gr.u_results + ''
+            });
+        }
+        return tests;
+    },
+
+	fetchBillingRecords: function(patientSysId) {
+        var bills = [];
+        var gr = new GlideRecord('u_billing');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+        while (gr.next()) {
+            bills.push({
+                sys_id:  gr.getUniqueValue(),
+                amount:  gr.u_total_amount + '',
+                date:    gr.u_billing_date ? gr.u_billing_date.getDisplayValue() : '',
+                status:  gr.u_payment_status + ''
+            });
+        }
+        return bills;
+    },
+
+	fetchInsurancePolicies: function(patientSysId) {
+        var policies = [];
+        var gr = new GlideRecord('u_insurance');
+        gr.addQuery('u_patient_id', patientSysId);
+        gr.query();
+
+        while (gr.next()) {
+            policies.push({
+                sys_id:           gr.getUniqueValue(),
+                policy_number:    gr.u_policy_number + '',
+                provider:         gr.u_insurance_provider + '',
+                coverage:         gr.u_coverage_details + '',
+                expiry_date:      gr.u_expiry_date ? gr.u_expiry_date.getDisplayValue() : ''
+            });
+        }
+        return policies;
+    },
+
+    type: 'PatientUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 12:54:41</sys_created_on>
+        <sys_id>650185e6c37a6210845937cc0501313c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PatientUtils</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_650185e6c37a6210845937cc0501313c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 12:57:31</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>650185e6c37a6210845937cc0501313c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-20 12:54:40</sys_created_on>
+        <sys_id>4fb185e6c37a6210845937cc0501313f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-20 12:54:40</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
