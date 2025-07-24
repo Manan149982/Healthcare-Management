@@ -4,13 +4,13 @@
             <element>u_work_notes</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-01 17:53:04</sys_created_on>
-            <sys_id>8ddfc8e4c3662210845937cc050131c8</sys_id>
+            <sys_created_on>2025-07-24 08:53:10</sys_created_on>
+            <sys_id>6cd0b4fbc3362210845937cc050131dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Activity/Notes" display_value="Activity/Notes" name="u_patient" sys_domain="global" view="Default view">b00f08a4c3662210845937cc050131b2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-01 17:53:04</sys_updated_on>
+            <sys_updated_on>2025-07-24 08:53:10</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>activity.xml</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-01 17:53:04</sys_created_on>
-            <sys_id>05dfc8e4c3662210845937cc050131c9</sys_id>
+            <sys_created_on>2025-07-24 08:53:10</sys_created_on>
+            <sys_id>28d0b4fbc3362210845937cc050131dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Activities (filtered)">444ea5c6bf310100e628555b3f0739d6</sys_ui_formatter>
             <sys_ui_section caption="Activity/Notes" display_value="Activity/Notes" name="u_patient" sys_domain="global" view="Default view">b00f08a4c3662210845937cc050131b2</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-01 17:53:04</sys_updated_on>
+            <sys_updated_on>2025-07-24 08:53:10</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>

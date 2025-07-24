@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="7e9500f7c3722210845937cc050131f7" label="Feedback" max_length="40" name="u_feedback" type="collection">
+        <element label="Rating" max_length="40" name="u_rating" type="integer"/>
+        <element attributes="encode_utf8=false" dependent="u_patient_id" dependent_on_field="u_patient_id" label="Patient ID" max_length="32" name="u_patient_id" reference="u_patient" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Work Notes" max_length="4000" name="u_work_notes" type="journal"/>
+        <element attributes="encode_utf8=false" dependent="u_appointment_id" dependent_on_field="u_appointment_id" label="Appointment ID" max_length="32" name="u_appointment_id" reference="u_appointment" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="40" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Feedback" max_length="40" name="u_feedback" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="u_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Short Description" max_length="40" name="u_short_description" type="string"/>
+        <index name="index">
+            <element name="u_appointment_id"/>
+        </index>
+        <index name="index2">
+            <element name="u_patient_id"/>
+        </index>
+    </element>
+</database>
