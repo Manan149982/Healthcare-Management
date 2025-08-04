@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.PatientUtils1</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PatientUtils1</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PatientUtils1 = Class.create();
+PatientUtils1.prototype = {
+  initialize :function(){},
+ 
+ 
+  fetchDetails: function(patientid) {
+    var gr = new GlideRecord('u_patient');
+    if (!gr.get(patientid)) {
+      throw 'Patient record not found for sys_id: ' + patientid;
+    }
+    // build the result
+    return {
+      name:   gr.getValue('u_first_name') + ' ' + gr.getValue('u_last_name'),
+      age:    parseInt(gr.getValue('u_age'), 10),
+      gender: gr.getDisplayValue('u_gender'),
+      vip:    gr.getValue('u_vip') === 'true'
+    };
+  },
+ 
+  type: 'PatientUtils1'
+};
+ ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-30 16:17:07</sys_created_on>
+        <sys_id>03cfc1b5c3cb2210845937cc05013174</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>PatientUtils1</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_03cfc1b5c3cb2210845937cc05013174</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-30 18:22:15</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>03cfc1b5c3cb2210845937cc05013174</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-30 16:17:07</sys_created_on>
+        <sys_id>ceffc5f5c3cb2210845937cc050131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-30 16:17:07</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

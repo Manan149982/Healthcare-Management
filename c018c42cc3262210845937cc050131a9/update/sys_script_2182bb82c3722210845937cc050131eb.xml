@@ -30,7 +30,7 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-	if(current.u_total_dosage === "insert" || current.u_dosage.changes() || current.u_frequency.changes()){
+	if(current.u_dosage.changes() || current.u_frequency.changes()){
 		var freq = parseFloat(current.u_frequency);
 		var dosage = parseFloat(current.u_dosage);
 		current.u_total_dosage = freq*dosage;
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2182bb82c3722210845937cc050131eb</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Q5</sys_name>
         <sys_overrides/>
         <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
         <sys_update_name>sys_script_2182bb82c3722210845937cc050131eb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-07-19 13:55:18</sys_updated_on>
+        <sys_updated_on>2025-07-28 09:06:20</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.DoctorUtils1</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>DoctorUtils1</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DoctorUtils1 = Class.create();
+DoctorUtils1.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getDoctorsByDepartment: function() {
+        var deptId = this.getParameter("sysparm_department_id");
+        var doctors = [];
+        var gr = new GlideRecord("u_doctor");
+        gr.addQuery("u_department", deptId);
+        gr.query();
+        while (gr.next()) {
+            doctors.push(gr.getDisplayValue("u_first_name") + ':' + gr.getUniqueValue());
+        }
+        return doctors.join(',');
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-31 11:50:21</sys_created_on>
+        <sys_id>f10cd546c3cf6210845937cc05013139</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DoctorUtils1</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_f10cd546c3cf6210845937cc05013139</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-31 11:50:21</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f10cd546c3cf6210845937cc05013139</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-31 11:50:21</sys_created_on>
+        <sys_id>408c5106c3cf6210845937cc050131ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-31 11:50:21</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

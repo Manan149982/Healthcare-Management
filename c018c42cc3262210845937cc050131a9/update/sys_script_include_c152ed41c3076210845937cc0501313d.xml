@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>global.Q1Practice</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Q1Practice</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Q1Practice = Class.create();
+Q1Practice.prototype = {
+    initialize: function() {
+    },
+fetchname: function(patientidse)
+{
+	var gr = new GlideRecord("u_patient");
+	if (gr.get(patientidse)) {
+		return gr;
+	}
+	else 
+	return null;
+	
+},
+isVip: function(pid){
+	var gr = new GlideRecord('u_patient');
+	if (gr.get(pid)) {
+		return gr.u_vip;
+	}
+	else 
+	return null;
+},
+    type: 'Q1Practice'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 09:44:28</sys_created_on>
+        <sys_id>c152ed41c3076210845937cc0501313d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Q1Practice</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_c152ed41c3076210845937cc0501313d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 05:54:18</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>c152ed41c3076210845937cc0501313d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 09:44:27</sys_created_on>
+        <sys_id>bae22949c3076210845937cc0501316e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-28 09:44:27</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

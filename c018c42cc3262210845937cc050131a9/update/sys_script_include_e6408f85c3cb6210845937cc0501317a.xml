@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>global.Q1</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Q1</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[// var Q1 = Class.create();
+// Q1.prototype = {
+//     initialize: function() {
+//     },
+// fetchdetails: function(patid){
+// 	var gr = new GlideRecord("u_patient");
+// 	gr.addQuery("u_number", patnumber);
+// 	if (gr.get(patid)) {
+// 	   return {
+// 		name: gr.getValue("u_first_name"),
+// 		email: gr.getValue("u_email"),
+// 		phone: gr.getValue("u_contact_number")
+// 	   }
+// 	}
+// 	else{
+// 		return null
+// 	}
+
+// },
+
+
+//     type: 'Q1'
+// };
+
+
+var Q1 = Class.create();
+Q1.prototype = {
+    initialize: function() {},
+
+    fetchdetails: function(patid) {
+        var gr = new GlideRecord("u_patient");
+        gr.addQuery("u_number", patid);
+        gr.query();
+
+        if (gr.next()) {
+            return {
+                name: gr.getValue("u_first_name"),
+                email: gr.getValue("u_email"),
+                phone: gr.getValue("u_contact_number")
+            };
+        } else {
+            return null;
+        }
+    },
+
+    isVIP: function(vip) {
+
+
+        var grs = new GlideRecord("u_patient");
+        grs.addQuery("u_number", vip);
+        grs.query();
+        if (grs.next()) {
+            return grs.getDisplayValue("u_vip")
+
+        }
+    },
+
+    fetchappointment: function(apt) {
+        var gra = new GlideRecord("u_appointment");
+        gra.addQuery("u_patient_id.number", apt);
+        gra.query();
+        var results = [];
+        while (gra.next()) {
+            results.push({
+				Date: gra.getValue("u_appointment_date"),
+				Id: gra.getUniqueValue("number")})
+        }
+        return results;
+    },
+	
+    type: 'Q1'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 16:35:08</sys_created_on>
+        <sys_id>e6408f85c3cb6210845937cc0501317a</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Q1</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_e6408f85c3cb6210845937cc0501317a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 05:54:00</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e6408f85c3cb6210845937cc0501317a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 16:35:08</sys_created_on>
+        <sys_id>22e04789c34b6210845937cc05013178</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-28 16:35:08</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -19,6 +19,25 @@
             <dependent_value/>
             <element>u_frequency</element>
             <hint/>
+            <inactive>false</inactive>
+            <label>Once Daily</label>
+            <language>en</language>
+            <name>u_medication</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-01 18:08:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-28 09:14:04</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_frequency</element>
+            <hint/>
             <inactive>true</inactive>
             <label>None</label>
             <language>en</language>
@@ -39,25 +58,6 @@
             <element>u_frequency</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Once Daily</label>
-            <language>en</language>
-            <name>u_medication</name>
-            <sequence>0</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-07-01 18:08:44</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-08 12:06:48</sys_updated_on>
-            <value>once daily</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>u_frequency</element>
-            <hint/>
-            <inactive>false</inactive>
             <label>Twice Daily</label>
             <language>en</language>
             <name>u_medication</name>
@@ -67,10 +67,29 @@
             <sys_created_on>2025-07-01 18:08:44</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-08 12:06:48</sys_updated_on>
-            <value>twice daily</value>
+            <sys_updated_on>2025-07-28 09:14:12</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_frequency</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Thrice Daily</label>
+            <language>en</language>
+            <name>u_medication</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-07-28 09:09:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-07-28 09:09:22</sys_updated_on>
+            <value>3</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -86,10 +105,10 @@
             <sys_created_on>2025-07-01 18:08:44</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>1</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-07-07 12:36:57</sys_updated_on>
-            <value>thrice daily</value>
+            <sys_updated_on>2025-07-28 09:13:33</sys_updated_on>
+            <value>3</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>

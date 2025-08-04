@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>global.Q2practice</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Q2practice</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Q2practice = Class.create();
+Q2practice.prototype = {
+    initialize: function() {},
+    appointconfirm: function(idser) {
+        var gr = new GlideRecord("u_appointment");
+        if (gr.get(idser)) {
+            return gr.u_status;
+        }
+		else 
+		return "Patient not found";
+
+
+    },
+    type: 'Q2practice'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 09:54:19</sys_created_on>
+        <sys_id>cbb4a9c9c3076210845937cc05013116</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Q2practice</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_cbb4a9c9c3076210845937cc05013116</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 05:54:13</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>cbb4a9c9c3076210845937cc05013116</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-28 09:54:18</sys_created_on>
+        <sys_id>4325ed49c3076210845937cc0501310e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-28 09:54:18</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

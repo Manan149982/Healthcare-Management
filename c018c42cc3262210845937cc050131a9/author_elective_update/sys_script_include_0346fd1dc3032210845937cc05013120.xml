@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.practice29thjune</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>practice29thjune</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Test = Class.create();
+Test.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+   getPatientDetails: function() {
+      var patientId = this.getParameter('sysparm_patient_id');
+
+      var gr = new GlideRecord('u_patient');
+      if (gr.get(patientId)) {
+         var result = {
+            name: gr.getValue('u_first_name') + ' ' + gr.getValue('u_last_name'),
+            age: gr.getValue('u_age'),
+            gender: gr.getDisplayValue('u_gender'),
+			vip: gr.getValue('u_vip')
+         };
+         return new global.JSON().encode(result); // ✅ Fixed here
+      }
+	  
+   },
+
+   type: 'Test'
+
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-29 05:52:48</sys_created_on>
+        <sys_id>0346fd1dc3032210845937cc05013120</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>practice29thjune</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_update_name>sys_script_include_0346fd1dc3032210845937cc05013120</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 16:25:27</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>0346fd1dc3032210845937cc05013120</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-29 05:52:48</sys_created_on>
+        <sys_id>0f77bd1dc3032210845937cc0501314d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 05:52:48</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</application>
+        <file_path/>
+        <instance_id>ae28286a1b4a86547d9d2f8dee4bcbaf</instance_id>
+        <instance_name>dev267751</instance_name>
+        <name>sys_script_include_0346fd1dc3032210845937cc05013120</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.practice29thjune&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;practice29thjune&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var Test = Class.create();
+Test.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+   getPatientDetails: function() {
+      var patientId = this.getParameter('sysparm_patient_id');
+
+      var gr = new GlideRecord('u_patient');
+      if (gr.get(patientId)) {
+         var result = {
+            name: gr.getValue('u_first_name') + ' ' + gr.getValue('u_last_name'),
+            age: gr.getValue('u_age'),
+            gender: gr.getDisplayValue('u_gender'),
+			vip: gr.getValue('u_vip')
+         };
+         return new global.JSON().encode(result); // ✅ Fixed here
+      }
+	  
+   },
+
+   type: 'Test'
+
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-29 05:52:48&lt;/sys_created_on&gt;&lt;sys_id&gt;0346fd1dc3032210845937cc05013120&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;practice29thjune&lt;/sys_name&gt;&lt;sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9"&gt;c018c42cc3262210845937cc050131a9&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Healthcare Management "&gt;c018c42cc3262210845937cc050131a9&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_0346fd1dc3032210845937cc05013120&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-29 16:25:27&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;0346fd1dc3032210845937cc05013120&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-07-29 05:52:48&lt;/sys_created_on&gt;&lt;sys_id&gt;0f77bd1dc3032210845937cc0501314d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-07-29 05:52:48&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1254899994</payload_hash>
+        <record_name>practice29thjune</record_name>
+        <reverted_from/>
+        <source>f4182164c3c32210845937cc050131a0</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-29 16:25:27</sys_created_on>
+        <sys_id>6648c86dc30b2210845937cc050131e5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1985700cfe70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 16:25:27</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>ea48c86d4f0b2210ceb3b45bde9fa8e4</update_guid>
+        <update_guid_history>ea48c86d4f0b2210ceb3b45bde9fa8e4:1254899994,9109fd9dbd032210669d4c24b7e40175:-1746162952,1f77bd9dc10322108e23d11296381673:101102947</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-07-29 16:29:24</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>046d83082dae46ba806c8ca455a8a5f1</sys_id>
+        <sys_metadata>0346fd1dc3032210845937cc05013120</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>practice29thjune</sys_name>
+        <sys_package display_value="Healthcare Management " source="c018c42cc3262210845937cc050131a9">c018c42cc3262210845937cc050131a9</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Healthcare Management ">c018c42cc3262210845937cc050131a9</sys_scope>
+        <sys_scope_delete display_value="">044c04c2413e42d1802f378f46e9aae9</sys_scope_delete>
+        <sys_update_name>sys_script_include_0346fd1dc3032210845937cc05013120</sys_update_name>
+        <sys_update_version display_value="sys_script_include_0346fd1dc3032210845937cc05013120">6648c86dc30b2210845937cc050131e5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-07-29 16:29:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

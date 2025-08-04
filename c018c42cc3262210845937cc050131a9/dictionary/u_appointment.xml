@@ -22,6 +22,7 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Appointment Date" mandatory="true" max_length="40" name="u_appointment_date" type="glide_date_time"/>
+        <element label="Age" max_length="40" name="u_age" type="integer"/>
         <element attributes="edge_encryption_enabled=true" label="Work Notes" mandatory="true" max_length="4000" name="u_work_notes" type="journal"/>
         <element attributes="encode_utf8=false" dependent="u_doctor" dependent_on_field="u_doctor" label="Doctor" mandatory="true" max_length="32" name="u_doctor" reference="u_doctor" type="reference" use_dependent_field="true"/>
     </element>
